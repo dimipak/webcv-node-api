@@ -1,0 +1,26 @@
+{
+  "name": "webcvapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "export NODE_ENV=development && nodemon index.js",
+    "prod": "export NODE_ENV=production && nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.3.1",
+    "joi": "^17.3.0",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.6",
+    "sequelize": "^6.3.5"
+  }
+}
