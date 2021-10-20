@@ -1,5 +1,5 @@
 
-class GetUserDetailsResource {
+class ProfileDetailsResource {
 
     constructor() {
         this.withoutFields = [
@@ -11,17 +11,18 @@ class GetUserDetailsResource {
     response(res, result) {
 
         return this.filterFields({
-            'user_id': result.user_id,
+            'profile_id': result.profile_id,
             'username': result.username,
-            'name': result.name,
-            'surname': result.surname,
-            'quote': result.quote,
-            'quote2': result.quote2,
+            'first_name': result.first_name,
+            'last_name': result.last_name,
+            'first_quote': result.first_quote,
+            'second_quote': result.second_quote,
             'email': result.email,
             'phone': result.phone,
             'about': result.about,
-            'created_at': result.createdAt,
-            'updated_at': result.updatedAt
+            'profile_image': result.profile_image,
+            'cover_image': result.cover_image,
+            'social_networks': result.socialNetworks
         });
 
     }
@@ -38,4 +39,4 @@ class GetUserDetailsResource {
     }
 }
 
-module.exports = new GetUserDetailsResource;
+module.exports = new ProfileDetailsResource;

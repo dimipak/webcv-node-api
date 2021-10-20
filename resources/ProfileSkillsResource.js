@@ -1,5 +1,5 @@
 
-class GetUserSkillsResource {
+class ProfileSkillsResource {
 
     constructor() {
         this.withoutFields = [
@@ -11,10 +11,10 @@ class GetUserSkillsResource {
 
         let data = []
 
-        result.forEach((row) => {
+        result.profileSkills.forEach((row) => {
             data.push(this.filterFields({
-                'user_skills_id': row.user_skills_id,
-                'user_id': row.user_id,
+                'skill_id': row.skill_id,
+                'profile_id': row.profile_id,
                 'name': row.name,
                 'progress': row.progress,
                 'description': row.description,
@@ -22,7 +22,7 @@ class GetUserSkillsResource {
             }))
         })
 
-        res.json(data)
+        return data;
     }
 
     filterFields(data) {
@@ -37,4 +37,4 @@ class GetUserSkillsResource {
     }
 }
 
-module.exports = new GetUserSkillsResource();
+module.exports = new ProfileSkillsResource;

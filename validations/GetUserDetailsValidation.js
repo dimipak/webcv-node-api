@@ -13,7 +13,7 @@ class GetUserDetailsValidation extends Validation {
     rules() {
         return {
             id: {
-                rule: Joi.number().integer().min(1).max(10).required(),
+                rule: Joi.required(),
                 value: this.req.params.id
             }
         }

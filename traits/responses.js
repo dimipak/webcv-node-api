@@ -1,17 +1,24 @@
 const responses = {
     success: (res, data) => {
-        res.json(data);
+        res.json({
+            'status': 200,
+            'error': false,
+            'message': 'Successful message',
+            'data': data
+        });
     },
-    notFound: (res) => {
+    notFound: (res, err) => {
         res.status(404).json({
+            'status': 404,
             'error': true,
-            'message': 'Not Found'
+            'message': err?? 'Not Found'
         })
     },
     error: (res, err) => {
         res.status(400).json({
+            'status': 400,
             'error': true,
-            'message': err
+            'message': err?? '400 error'
         })
     }
 }
