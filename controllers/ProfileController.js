@@ -4,6 +4,8 @@ const ProfileDetailsResource = require('../resources/ProfileDetailsResource')
 const ProfileSkillsResource = require('../resources/ProfileSkillsResource')
 const response = require('../traits/responses')
 const ProfilePortfolioResource = require('../resources/ProfilePortfolioResource')
+const ProfileExperienceResource = require('../resources/ProfileExperienceResource')
+const ProfileEducationResource = require('../resources/ProfileEducationResource')
 
 class ProfileController {
 
@@ -94,6 +96,46 @@ class ProfileController {
 
         // Success Response
         response.success(res, ProfilePortfolioResource.response(res, data));
+    }
+
+    async getProfileExperience(req, res)
+    {
+        const data = await ProfileRepository.ProfileExperience(req, res)
+
+        // Empty Response
+        if (data === null) {
+            response.notFound(res, data);
+            return;
+        }
+
+        // Error Response
+        if (data.error === true) {
+            response.error(res, data.message.parent.code);
+            return;
+        }
+
+        // Success Response
+        response.success(res, ProfileExperienceResource.response(res, data));
+    }
+
+    async getProfileEducation(req, res)
+    {
+        const data = await ProfileRepository.ProfileEducation(req, res)
+
+        // Empty Response
+        if (data === null) {
+            response.notFound(res, data);
+            return;
+        }
+
+        // Error Response
+        if (data.error === true) {
+            response.error(res, data.message.parent.code);
+            return;
+        }
+
+        // Success Response
+        response.success(res, ProfileEducationResource.response(res, data));
     }
 }
 

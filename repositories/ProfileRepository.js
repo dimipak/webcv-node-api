@@ -65,3 +65,39 @@ module.exports.ProfilePortfolio = (req, res) => {
     });
 
 }
+
+module.exports.ProfileExperience = (req, res) => {
+
+    return Profile.findOne({
+        where: {
+            active: true
+        },
+        include: [
+            'experiences'
+        ],
+    }).catch(err => {
+        return {
+            'error': true,
+            'message': err
+        }
+    });
+
+}
+
+module.exports.ProfileEducation = (req, res) => {
+
+    return Profile.findOne({
+        where: {
+            active: true
+        },
+        include: [
+            'educations'
+        ],
+    }).catch(err => {
+        return {
+            'error': true,
+            'message': err
+        }
+    });
+
+}
