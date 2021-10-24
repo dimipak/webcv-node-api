@@ -27,8 +27,8 @@ module.exports = {
         description: 'Creating Websites for customers (Wordpress)',
         country: 'Greece',
         city: 'Athens',
-        start_date: '2017-09',
-        end_date: '2019-10'
+        start_date: '2017-09-01 00:00:00',
+        end_date: '2019-10-01 00:00:00'
       },
       {
         profile_id: result.profile_id,
@@ -37,8 +37,8 @@ module.exports = {
         description: 'Used custom PHP for managing Loyalty Digital Platform',
         country: 'Greece',
         city: 'Athens',
-        start_date: '2019-10',
-        end_date: '2021-11'
+        start_date: '2019-10-01 00:00:00',
+        end_date: '2021-11-01 00:00:00'
       }
     ])
 

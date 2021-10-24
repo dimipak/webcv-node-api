@@ -26,7 +26,7 @@ module.exports = {
         reference: 'Linkedin',
         description: 'Standard Library',
         link: 'https://www.linkedin.com',
-        date: '2020'
+        date: '2020-01-01 00:00:00'
       },
       {
         profile_id: result.profile_id,
@@ -34,7 +34,7 @@ module.exports = {
         reference: 'Linkedin',
         description: 'SVG Graphics, D3 Models',
         link: 'https://www.linkedin.com',
-        date: '2020',
+        date: '2020-01-01 00:00:00'
       }
     ])
   },
