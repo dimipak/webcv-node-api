@@ -28,6 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     reference: DataTypes.STRING,
     description: DataTypes.TEXT,
+    link: DataTypes.STRING,
     date: DataTypes.DATE
   }, {
     sequelize,

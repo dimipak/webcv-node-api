@@ -27,6 +27,9 @@ module.exports = {
       description: {
         type: Sequelize.TEXT
       },
+      link: {
+        type: Sequelize.STRING
+      },
       date: {
         type: Sequelize.DATE
       },
