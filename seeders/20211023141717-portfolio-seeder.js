@@ -46,7 +46,8 @@ module.exports = {
      * Add commands to revert seed here.
      *
      * Example:
-     * await queryInterface.bulkDelete('People', null, {});
      */
+
+    await queryInterface.bulkDelete('portfolios', null, {});
   }
 };

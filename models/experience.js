@@ -28,6 +28,8 @@ module.exports = (sequelize, DataTypes) => {
     company_name: DataTypes.STRING,
     role: DataTypes.STRING,
     description: DataTypes.TEXT,
+    country: DataTypes.STRING,
+    city: DataTypes.STRING,
     start_date: DataTypes.DATE,
     end_date: DataTypes.DATE
   }, {

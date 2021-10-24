@@ -27,6 +27,14 @@ module.exports = {
       description: {
         type: Sequelize.TEXT
       },
+      country: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      city: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
       start_date: {
         type: Sequelize.DATE
       },
