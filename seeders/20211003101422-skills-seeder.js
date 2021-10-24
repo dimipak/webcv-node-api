@@ -18,8 +18,15 @@ module.exports = {
          profile_id: result.profile_id,
          name: 'PHP',
          progress: '90',
-         description: 'I like php',
+         description: 'PHP is my main language when it comes to web development',
          order: 1
+       },
+       {
+         profile_id: result.profile_id,
+         name: 'C / C++',
+         progress: '70',
+         description: 'Using C and C++ for developing firmware on IoT',
+         order: 2
        }
      ]);
   },
