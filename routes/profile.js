@@ -8,4 +8,6 @@ module.exports = (app) => {
 
     app.get('/profile/:id/skills', ProfileController.getProfileSkills)
 
+    app.get('/profile/:id/portfolio', ProfileController.getProfilePortfolio)
+
 }

@@ -47,3 +47,21 @@ module.exports.ProfileSkills = (req, res) => {
     });
 
 }
+
+module.exports.ProfilePortfolio = (req, res) => {
+
+    return Profile.findOne({
+        where: {
+            active: true
+        },
+        include: [
+            'portfolios'
+        ],
+    }).catch(err => {
+        return {
+            'error': true,
+            'message': err
+        }
+    });
+
+}

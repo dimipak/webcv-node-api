@@ -3,6 +3,7 @@ const ProfileRepository = require('../repositories/ProfileRepository')
 const ProfileDetailsResource = require('../resources/ProfileDetailsResource')
 const ProfileSkillsResource = require('../resources/ProfileSkillsResource')
 const response = require('../traits/responses')
+const ProfilePortfolioResource = require('../resources/ProfilePortfolioResource')
 
 class ProfileController {
 
@@ -73,6 +74,26 @@ class ProfileController {
 
         // Success Response
         response.success(res, ProfileSkillsResource.response(res, data));
+    }
+
+    async getProfilePortfolio(req, res)
+    {
+        const data = await ProfileRepository.ProfilePortfolio(req, res)
+
+        // Empty Response
+        if (data === null) {
+            response.notFound(res, data);
+            return;
+        }
+
+        // Error Response
+        if (data.error === true) {
+            response.error(res, data.message.parent.code);
+            return;
+        }
+
+        // Success Response
+        response.success(res, ProfilePortfolioResource.response(res, data));
     }
 }
 
