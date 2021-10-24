@@ -23,6 +23,24 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE'
       })
 
+      Profile.hasMany(models.Portfolio, {
+        foreignKey: 'profile_id',
+        as: 'portfolios',
+        onDelete: 'CASCADE'
+      })
+
+      Profile.hasMany(models.Experience, {
+        foreignKey: 'profile_id',
+        as: 'experiences',
+        onDelete: 'CASCADE'
+      })
+
+      Profile.hasMany(models.Education, {
+        foreignKey: 'profile_id',
+        as: 'educations',
+        onDelete: 'CASCADE'
+      })
+
     }
   }
   Profile.init({

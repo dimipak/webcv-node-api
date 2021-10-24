@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const passHash = require('password-hash')
+const config = require('config')
 
 module.exports = (app) => {
 
@@ -20,13 +21,16 @@ module.exports = (app) => {
         var passFalse = passHash.verify('secret', 'asdfasdfasdfasdf')
         var passTrue = passHash.verify('secret', password)
 
+        var myjwt = config.get('jwt_secret')
+
         res.json({
             'token': token,
             'validate_wrong': val,
             'validate_correct': val2,
             'password': password,
             'password_verified_false': passFalse,
-            'password_verified_true': passTrue
+            'password_verified_true': passTrue,
+            'jwt': myjwt
         })
     })
 

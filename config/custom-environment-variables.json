@@ -1,3 +1,9 @@
 {
-  "jwt_secret": "JWT_SECRET"
+  "jwt_secret": "JWT_SECRET",
+  "database": {
+    "mysql_host": "MYSQL_HOST",
+    "mysql_user": "MYSQL_USER",
+    "mysql_pass": "MYSQL_PASS",
+    "mysql_db": "MYSQL_DB"
+  }
 }
