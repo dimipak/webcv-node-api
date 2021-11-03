@@ -26,7 +26,7 @@ module.exports = {
           type: 'Company',
           technology: 'Wordpress',
           customer: 'Company',
-          image_url: 'https://picsum.photos/400/1500',
+          image_url: 'https://dimipak.gr/img/correct.a80f3081.jpg',
           website_url: 'https://www.example.com'
         },
         {
@@ -35,7 +35,7 @@ module.exports = {
           type: 'Company',
           technology: 'CodeIgniter',
           customer: 'Company',
-          image_url: 'https://picsum.photos/400/1500',
+          image_url: 'https://dimipak.gr/img/giasite.ea173165.jpg',
           website_url: 'https://www.example.com'
         }
       ])

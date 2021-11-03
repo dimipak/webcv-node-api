@@ -3,16 +3,16 @@ const helmet = require('helmet')
 const morgan = require('morgan')
 const express = require('express')
 const app = express()
-require('./routes')(app)
 const cors = require('cors')
+app.use(cors())
+require('./routes')(app)
+
 const response = require('./traits/responses')
 
 console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
-
 //app.get('env') is development by default if NODE_ENV its not set
-console.log(`app: ${app.get('env')}`)
 
-app.use(cors())
+console.log(`app: ${app.get('env')}`)
 
 // Middleware: Gives full headers
 app.use(helmet())
