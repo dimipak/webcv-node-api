@@ -31,8 +31,8 @@ module.exports = {
         email: "jimpak13@gmail.com",
         phone: "6984172841",
         about: "Programming is my passion. I love writing code and when i am not, i truly miss it. I started by myself watching lessons on the internet mainly at lynda.com and later on at linkedin learning.\nI have learned a lot in the past years in both work and personal experience. I always try to be up to date with new technologies that come up every day. I found myself enjoying better being a backend developer using various languages but frontend is something that does not go without notice.\nI am a teamwork player, cooperative and i always take responsibilities without any hesitation. I am keen on writing clean and readable code as much as possible.\nIf i am not coding, i like to work out in the gym or watch movies.",
-        profile_image: 'https://dimipak.gr/img/profile.b8ab29ba.jpg',
-        cover_image: 'https://dimipak.gr/img/cover.62f45755.jpeg'
+        profile_image: 'https://webcv-files.s3.eu-central-1.amazonaws.com/images/profile.jpg',
+        cover_image: 'https://webcv-files.s3.eu-central-1.amazonaws.com/images/cover.jpeg'
       }
     ])
   },

@@ -13,4 +13,6 @@ module.exports = (app) => {
     app.get('/profile/:id/experience', ProfileController.getProfileExperience)
 
     app.get('/profile/:id/education', ProfileController.getProfileEducation)
+
+    app.get('/pdf', ProfileController.getPdf)
 }

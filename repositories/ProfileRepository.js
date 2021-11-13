@@ -1,4 +1,4 @@
-const {Profile} = require('../models')
+const { Profile , Skill, Experience} = require('../models')
 
 module.exports.getActiveProfile = (req, res) => {
     return Profile.findOne({
@@ -38,7 +38,7 @@ module.exports.ProfileSkills = (req, res) => {
         },
         include: [
             'profileSkills'
-        ],
+        ]
     }).catch(err => {
         return {
             'error': true,
@@ -46,6 +46,26 @@ module.exports.ProfileSkills = (req, res) => {
         }
     });
 
+}
+
+module.exports.getSkills = async (profileId) => {
+
+    return await Skill.findAll({
+        where: {
+            profile_id: profileId
+        },
+        raw: true
+    })
+}
+
+module.exports.getExperiences = async (profileId) => {
+
+    return await Experience.findAll({
+        where: {
+            profile_id: profileId
+        },
+        raw: true
+    })
 }
 
 module.exports.ProfilePortfolio = (req, res) => {

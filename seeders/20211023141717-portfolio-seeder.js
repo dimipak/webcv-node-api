@@ -26,7 +26,7 @@ module.exports = {
         type: 'Business',
         technology: 'Wordpress',
         customer: 'Company',
-        image_url: 'https://dimipak.gr/img/correct.a80f3081.jpg',
+        image_url: 'https://webcv-files.s3.eu-central-1.amazonaws.com/images/correct.jpg',
         website_url: 'https://www.correctproductions.com/'
       },
       {
@@ -35,7 +35,7 @@ module.exports = {
         type: 'Business',
         technology: 'CodeIgniter',
         customer: 'Company',
-        image_url: 'https://dimipak.gr/img/giasite.ea173165.jpg',
+        image_url: 'https://webcv-files.s3.eu-central-1.amazonaws.com/images/giasite.jpg',
         website_url: 'https://www.giasite.gr'
       },
       {
@@ -44,7 +44,7 @@ module.exports = {
         type: 'CV',
         technology: 'Wordpress',
         customer: 'Personal',
-        image_url: 'https://dimipak.gr/img/triantafylli.4acc6ac1.jpg',
+        image_url: 'https://webcv-files.s3.eu-central-1.amazonaws.com/images/triantafylli.jpg',
         website_url: 'https://www.natashatriantafylli.com'
       }
     ])
