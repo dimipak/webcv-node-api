@@ -1,4 +1,5 @@
 #!/bin/bash
 
+cd /home/ubuntu/app || exit
 
-docker-compose -f /home/ubuntu/app/docker-compose.yml
+docker-compose up -d
