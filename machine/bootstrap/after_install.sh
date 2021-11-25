@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd /home/ubuntu/app || exit
+cd /home/ubuntu/app
 
 docker-compose up -d
