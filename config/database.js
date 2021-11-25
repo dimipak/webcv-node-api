@@ -1,4 +1,4 @@
-require('dotenv').config({path: `${process.cwd()}/.env.${process.env.NODE_ENV}`});
+require('dotenv').config({path: `${process.cwd()}/.env.production`});
 const config = require('config')
 
 module.exports = {
