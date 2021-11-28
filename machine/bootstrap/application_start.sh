@@ -2,4 +2,4 @@
 
 cd /home/ubuntu/app
 
-npm run migrate
+#npm run migrate
