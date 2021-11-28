@@ -2,4 +2,4 @@
 
 cd /home/ubuntu/app
 
-docker-compose up -d
+pm2 start index.js
