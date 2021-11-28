@@ -3,7 +3,7 @@ const responses = {
         res.json({
             'status': 200,
             'error': false,
-            'successful_message': 'Successful message',
+            'message': 'Successful message',
             'data': data
         });
     },
