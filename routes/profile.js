@@ -14,5 +14,5 @@ module.exports = (app) => {
 
     app.get('/profile/:id/education', ProfileController.getProfileEducation)
 
-    app.get('/pdf', ProfileController.getPdf)
+    app.get('/profile/:id/pdf', ProfileController.getPdf)
 }

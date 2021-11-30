@@ -145,40 +145,65 @@ class ProfileController {
 
     async getPdf(req, res)
     {
+        const profileId = req.params.id
+
         // Get html mapper
         const html = fs.readFileSync("./html/cv.html", "utf8");
 
         // Set pdf options
         const options = {
             width: "300mm",
-            height: "500mm"
+            height: "400mm"
         }
 
-        const profileDetails = await ProfileRepository.ProfileDetails(req, res)
+        const profileDetails = await ProfileRepository.getProfile(profileId)
 
-        const activeProfile = await ProfileRepository.getActiveProfile(req, res)
+        const skills = await ProfileRepository.getSkills(profileId)
 
-        const skills = await ProfileRepository.getSkills(activeProfile.profile_id)
+        const experiences = await ProfileRepository.getExperiences(profileId)
 
-        const experiences = await ProfileRepository.getExperiences(activeProfile.profile_id)
+        const educations = await ProfileRepository.getEducations(profileId);
 
         const image = await axios.get(profileDetails.profile_image, {responseType: 'arraybuffer'});
+
         const imgB64 = Buffer.from(image.data).toString('base64');
 
         const document = {
-            helper:[
-                {
-                    name: "list",
-                    function: function(paragraph, options) {
-                        return options.fn(paragraph.split('\n'))
-                    }
-                }
-            ],
-            html: html,
+            html,
             data: {
+                profile: profileDetails.toJSON(),
                 skills,
-                experiences,
-                about: profileDetails.about,
+                experiences: experiences.map((node) => {
+                    let exp = node.toJSON()
+
+                    if (exp["start_date"] !== undefined) {
+                        const date = new Date(exp["start_date"])
+                        const year = date.getFullYear()
+                        const month = date.getMonth() + 1
+
+                        exp["start_date"] = month + '/' + year
+                    }
+
+                    if (exp["end_date"] !== undefined) {
+                        const date = new Date(exp["end_date"])
+                        const year = date.getFullYear()
+                        const month = date.getMonth() + 1
+
+                        exp["end_date"] = exp["end_date"] == null ? 'Current' : month + '/' + year
+                    }
+
+                    return exp
+                }),
+                educations: educations.map((node) => {
+                    let edu = node.toJSON()
+
+                    if (edu["date"] !== undefined) {
+                        const date = new Date(edu["date"])
+                        edu["date"] = date.getFullYear()
+                    }
+
+                    return edu
+                }),
                 image: "data:image/jpeg;base64," + imgB64
             },
             path: "./tmp/temp.pdf",
@@ -186,11 +211,10 @@ class ProfileController {
         }
 
         pdf.create(document, options)
-            .then((ress) => {
-                console.log('success')
+            .then((fileRes) => {
                 res.setHeader('Content-disposition', 'attachment; filename=temp.pdf')
                 res.setHeader('Content-type', 'application/pdf')
-                res.download(ress.filename)
+                res.download(fileRes.filename)
             })
             .catch((error) => {
                 console.error(error);

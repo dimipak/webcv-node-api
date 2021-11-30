@@ -1,6 +1,6 @@
 const responses = {
     success: (res, data) => {
-        res.json({
+        res.status(200).json({
             'status': 200,
             'error': false,
             'message': 'Successful message',

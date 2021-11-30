@@ -27,7 +27,13 @@ module.exports = (sequelize, DataTypes) => {
     },
     title: DataTypes.STRING,
     reference: DataTypes.STRING,
-    description: DataTypes.TEXT,
+    description: {
+      type: DataTypes.TEXT,
+      get() {
+        const rawValue = this.getDataValue('description')
+        return rawValue ? rawValue.split('\n') : null
+      }
+    },
     link: DataTypes.STRING,
     date: DataTypes.DATE
   }, {

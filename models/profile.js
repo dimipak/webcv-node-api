@@ -57,7 +57,13 @@ module.exports = (sequelize, DataTypes) => {
     second_quote: DataTypes.STRING,
     email: DataTypes.STRING,
     phone: DataTypes.STRING,
-    about: DataTypes.TEXT,
+    about: {
+      type: DataTypes.TEXT,
+      get() {
+        const rawValue = this.getDataValue('about')
+        return rawValue ? rawValue.split('\n') : null
+      }
+    },
     profile_image: DataTypes.STRING,
     cover_image: DataTypes.STRING,
     created_at: DataTypes.DATE,

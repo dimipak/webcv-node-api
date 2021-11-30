@@ -9,7 +9,7 @@ require('./routes')(app)
 
 const response = require('./traits/responses')
 
-console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
+console.log(`NODE_ENV: ${process.env.NODE_ENV}`)
 //app.get('env') is development by default if NODE_ENV its not set
 
 console.log(`app: ${app.get('env')}`)

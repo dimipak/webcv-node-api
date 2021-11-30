@@ -27,7 +27,13 @@ module.exports = (sequelize, DataTypes) => {
     },
     company_name: DataTypes.STRING,
     role: DataTypes.STRING,
-    description: DataTypes.TEXT,
+    description: {
+      type: DataTypes.TEXT,
+      get() {
+        const rawValue = this.getDataValue('description')
+        return rawValue ? rawValue.split('\n') : null
+      }
+    },
     country: DataTypes.STRING,
     city: DataTypes.STRING,
     start_date: DataTypes.DATE,

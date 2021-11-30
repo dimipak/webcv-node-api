@@ -135,6 +135,7 @@
             float: left;
             width: 20%;
             padding-top: 20px;
+            padding-right: 20px;
         }
 
         .details-left h5, .details-right h5 {
@@ -151,9 +152,9 @@
 
         .details-right {
             float: left;
-            width: 70%;
-            padding: 20px;
+            width: 50%;
             position: relative;
+            padding: 20px 20px 20px 40px;
         }
 
         .dot {
@@ -208,7 +209,9 @@
     <div class="left-side">
 
         <h3>ABOUT ME</h3>
-        <p>Programming is my passion. I love writing code and when i am not, i truly miss it. I started by myself watching lessons on the internet mainly at lynda.com and later on at linkedin learning. I have learned a lot in the past years in both work and personal experience. I always try to be up to date with new technologies that come up every day. I found myself enjoying better being a backend developer using various languages but frontend is something that does not go without notice. I am a teamwork player, cooperative and i always take responsibilities without any hesitation. I am keen on writing clean and readable code as much as possible. If i am not coding, i like to work out in the gym or watch movies.</p>
+        {{#each profile.about}}
+        <p>{{this}}</p>
+        {{/each}}
 
     </div>
 
@@ -262,8 +265,8 @@
     <div class="right-side">
         <div id="personal-information">
             <div id="me">
-                <div class="name">DIMITRIS</div>
-                <div class="name">PAKOS</div>
+                <div class="name">{{profile.first_name}}</div>
+                <div class="name">{{profile.last_name}}</div>
                 <p>BACKEND DEVELOPER</p>
             </div>
             <div id="connect">
@@ -274,7 +277,7 @@
 
                 <div class="connect-item">
                     <div id="email" class="icon"></div>
-                    <p>jimpak13@gmail.com</p>
+                    <p>{{profile.email}}</p>
                 </div>
             </div>
             <div style="clear: both;"></div>
@@ -295,20 +298,9 @@
                 <div class="details-right">
                     <h5>{{this.role}}</h5>
                     <ul>
-                        {{#my_list this.description }}
+                        {{#each description}}
                         <li>{{this}}</li>
-                        {{/my_list}}
-<!--                        <li>Used custom PHP for managing Loyalty Digital Platform</li>-->
-<!--                        <li>Member of the team created RestAPI for internal and external use, with Laravel as backend-->
-<!--                        </li>-->
-<!--                        <li>Docker and Vagrant for team working</li>-->
-<!--                        <li>Created and managed IoT for business using C/C++ language communicating with Laravel and Go-->
-<!--                            API-->
-<!--                        </li>-->
-<!--                        <li>Member of the team creating Go API for mobile usage</li>-->
-<!--                        <li>Worked on NodeJs API</li>-->
-<!--                        <li>Used Vue Js as front end</li>-->
-<!--                        <li>Managed Linux Server and making sure is up to date on a daily bases</li>-->
+                        {{/each}}
                     </ul>
                     <div class="dot"></div>
                     <div class="separator"></div>
@@ -317,142 +309,21 @@
             <div style="clear: both;"></div>
         </div>
         {{/each}}
-<!--        <div class="right-side-content">-->
-<!--            <div class="details">-->
-<!--                <div class="details-left">-->
-<!--                    <h5>ROADCUBE</h5>-->
-<!--                    <p>Athens, Greece</p>-->
-<!--                    <p>Sep 2019 - Present</p>-->
-<!--                </div>-->
-<!--                <div class="details-right">-->
-<!--                    <h5>Back end Developer</h5>-->
-<!--                    <ul>-->
-<!--                        <li>Used custom PHP for managing Loyalty Digital Platform</li>-->
-<!--                        <li>Member of the team created RestAPI for internal and external use, with Laravel as backend-->
-<!--                        </li>-->
-<!--                        <li>Docker and Vagrant for team working</li>-->
-<!--                        <li>Created and managed IoT for business using C/C++ language communicating with Laravel and Go-->
-<!--                            API-->
-<!--                        </li>-->
-<!--                        <li>Member of the team creating Go API for mobile usage</li>-->
-<!--                        <li>Worked on NodeJs API</li>-->
-<!--                        <li>Used Vue Js as front end</li>-->
-<!--                        <li>Managed Linux Server and making sure is up to date on a daily bases</li>-->
-<!--                    </ul>-->
-<!--                    <div class="dot"></div>-->
-<!--                    <div class="separator"></div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div style="clear: both;"></div>-->
-<!--        </div>-->
-<!--        <div class="right-side-content">-->
-<!--            <div class="details">-->
-<!--                <div class="details-left">-->
-<!--                    <h5>ROADCUBE</h5>-->
-<!--                    <p>Athens, Greece</p>-->
-<!--                    <p>Sep 2019 - Present</p>-->
-<!--                </div>-->
-<!--                <div class="details-right">-->
-<!--                    <h5>Back end Developer</h5>-->
-<!--                    <ul>-->
-<!--                        <li>Used custom PHP for managing Loyalty Digital Platform</li>-->
-<!--                        <li>Member of the team created RestAPI for internal and external use, with Laravel as backend-->
-<!--                        </li>-->
-<!--                        <li>Docker and Vagrant for team working</li>-->
-<!--                        <li>Created and managed IoT for business using C/C++ language communicating with Laravel and Go-->
-<!--                            API-->
-<!--                        </li>-->
-<!--                        <li>Member of the team creating Go API for mobile usage</li>-->
-<!--                        <li>Worked on NodeJs API</li>-->
-<!--                        <li>Used Vue Js as front end</li>-->
-<!--                        <li>Managed Linux Server and making sure is up to date on a daily bases</li>-->
-<!--                    </ul>-->
-<!--                    <div class="dot"></div>-->
-<!--                    <div class="separator"></div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div style="clear: both;"></div>-->
-<!--        </div>-->
-<!--        <div class="right-side-content">-->
-<!--            <div class="details">-->
-<!--                <div class="details-left">-->
-<!--                    <h5>ROADCUBE</h5>-->
-<!--                    <p>Athens, Greece</p>-->
-<!--                    <p>Sep 2019 - Present</p>-->
-<!--                </div>-->
-<!--                <div class="details-right">-->
-<!--                    <h5>Back end Developer</h5>-->
-<!--                    <ul>-->
-<!--                        <li>Used custom PHP for managing Loyalty Digital Platform</li>-->
-<!--                        <li>Member of the team created RestAPI for internal and external use, with Laravel as backend-->
-<!--                        </li>-->
-<!--                        <li>Docker and Vagrant for team working</li>-->
-<!--                        <li>Created and managed IoT for business using C/C++ language communicating with Laravel and Go-->
-<!--                            API-->
-<!--                        </li>-->
-<!--                        <li>Member of the team creating Go API for mobile usage</li>-->
-<!--                        <li>Worked on NodeJs API</li>-->
-<!--                        <li>Used Vue Js as front end</li>-->
-<!--                        <li>Managed Linux Server and making sure is up to date on a daily bases</li>-->
-<!--                    </ul>-->
-<!--                    <div class="dot"></div>-->
-<!--                    <div class="separator"></div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div style="clear: both;"></div>-->
-<!--        </div>-->
-<!--        <div class="right-side-content">-->
-<!--            <div class="details">-->
-<!--                <div class="details-left">-->
-<!--                    <h5>ROADCUBE</h5>-->
-<!--                    <p>Athens, Greece</p>-->
-<!--                    <p>Sep 2019 - Present</p>-->
-<!--                </div>-->
-<!--                <div class="details-right">-->
-<!--                    <h5>Back end Developer</h5>-->
-<!--                    <ul>-->
-<!--                        <li>Used custom PHP for managing Loyalty Digital Platform</li>-->
-<!--                        <li>Member of the team created RestAPI for internal and external use, with Laravel as backend-->
-<!--                        </li>-->
-<!--                        <li>Docker and Vagrant for team working</li>-->
-<!--                        <li>Created and managed IoT for business using C/C++ language communicating with Laravel and Go-->
-<!--                            API-->
-<!--                        </li>-->
-<!--                        <li>Member of the team creating Go API for mobile usage</li>-->
-<!--                        <li>Worked on NodeJs API</li>-->
-<!--                        <li>Used Vue Js as front end</li>-->
-<!--                        <li>Managed Linux Server and making sure is up to date on a daily bases</li>-->
-<!--                    </ul>-->
-<!--                    <div class="dot"></div>-->
-<!--                    <div class="separator"></div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div style="clear: both;"></div>-->
-<!--        </div>-->
 
         <h3 class="title">EDUCATION</h3>
-
+        {{#each educations}}
         <div class="right-side-content">
             <div class="details">
                 <div class="details-left">
-                    <h5>ROADCUBE</h5>
-                    <p>Athens, Greece</p>
-                    <p>Sep 2019 - Present</p>
+                    <h5>{{reference}}</h5>
+                    <p>{{date}}</p>
                 </div>
                 <div class="details-right">
-                    <h5>Back end Developer</h5>
+                    <h5>{{title}}</h5>
                     <ul>
-                        <li>Used custom PHP for managing Loyalty Digital Platform</li>
-                        <li>Member of the team created RestAPI for internal and external use, with Laravel as backend
-                        </li>
-                        <li>Docker and Vagrant for team working</li>
-                        <li>Created and managed IoT for business using C/C++ language communicating with Laravel and Go
-                            API
-                        </li>
-                        <li>Member of the team creating Go API for mobile usage</li>
-                        <li>Worked on NodeJs API</li>
-                        <li>Used Vue Js as front end</li>
-                        <li>Managed Linux Server and making sure is up to date on a daily bases</li>
+                        {{#each description}}
+                        <li>{{this}}</li>
+                        {{/each}}
                     </ul>
                     <div class="dot"></div>
                     <div class="separator"></div>
@@ -460,6 +331,7 @@
             </div>
             <div style="clear: both;"></div>
         </div>
+        {{/each}}
 
     </div>
 </div>
