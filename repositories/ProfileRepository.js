@@ -36,9 +36,13 @@ module.exports.ProfileSkills = (req, res) => {
         where: {
             active: true
         },
-        include: [
-            'profileSkills'
-        ]
+        include: {
+            association: 'profileSkills',
+            separate: true,
+            order: [
+                ['order', 'asc']
+            ]
+        }
     }).catch(err => {
         return {
             'error': true,
