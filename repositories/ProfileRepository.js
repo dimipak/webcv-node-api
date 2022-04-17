@@ -113,9 +113,13 @@ module.exports.ProfileExperience = (req, res) => {
         where: {
             active: true
         },
-        include: [
-            'experiences'
-        ],
+        include: {
+            association: 'experiences',
+            separate: true,
+            order: [
+                ['start_date', 'desc']
+            ]
+        }
     }).catch(err => {
         return {
             'error': true,
@@ -131,9 +135,13 @@ module.exports.ProfileEducation = (req, res) => {
         where: {
             active: true
         },
-        include: [
-            'educations'
-        ],
+        include: {
+            association: 'educations',
+            separate: true,
+            order: [
+                ['date', 'desc']
+            ]
+        }
     }).catch(err => {
         return {
             'error': true,
