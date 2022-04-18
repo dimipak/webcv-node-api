@@ -5,5 +5,8 @@
     "mysql_user": "MYSQL_USER",
     "mysql_pass": "MYSQL_PASS",
     "mysql_db": "MYSQL_DB"
+  },
+  "dimipak": {
+    "password": "USER_PASS"
   }
 }

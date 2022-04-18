@@ -2,6 +2,8 @@
 const {
   Model
 } = require('sequelize');
+const config = require("config");
+const bcrypt = require("bcrypt");
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -27,7 +29,15 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     activate_key: DataTypes.STRING,
     recovery_key: DataTypes.STRING,
-    activated: DataTypes.BOOLEAN
+    activated: DataTypes.BOOLEAN,
+    password: {
+      type: DataTypes.STRING,
+      set(value) {
+        const password = value + config.get('jwt_secret')
+        const hashed = bcrypt.hashSync(password, 10)
+        this.setDataValue('password', hashed)
+      }
+    }
   }, {
     sequelize,
     modelName: 'User',
