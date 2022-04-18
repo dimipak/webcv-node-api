@@ -12,4 +12,4 @@ sudo rm -rf app
 
 mkdir app
 
-sudo aws s3 cp s3://webcv-configurations/backend/.env.production /home/ubuntu/app/.env.production
+sudo aws s3 cp s3://webcv-configurations/backend/node/.env.production /home/ubuntu/app/.env.production
