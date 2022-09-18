@@ -36,7 +36,10 @@ class ProfileController {
         response.success(res, {
             'profile_id': data.profile_id,
             'username': data.username,
-            'active': data.active
+            'active': data.active,
+            'ip': req.socket.remoteAddress || 'none',
+            'ip2': req.headers['x-forwarded-for'] || 'none',
+            'ip3': req.ip || 'none'
         });
     }
 
