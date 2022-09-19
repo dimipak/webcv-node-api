@@ -8,5 +8,12 @@
   },
   "dimipak": {
     "password": "USER_PASS"
+  },
+  "ip_info": {
+    "token": "IP_INFO_TOKEN"
+  },
+  "discord": {
+    "id": "DISCORD_ID",
+    "token": "DISCORD_TOKEN"
   }
 }
