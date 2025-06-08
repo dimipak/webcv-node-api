@@ -17,7 +17,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.24.0",
+    "axios": "^0.30.0",
     "bcrypt": "^5.0.1",
     "config": "^3.3.3",
     "cors": "^2.8.5",
@@ -27,13 +27,13 @@
     "joi": "^17.3.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
-    "mysql2": "^2.2.5",
+    "mysql2": "^3.9.8",
     "nodemon": "^2.0.6",
     "password-hash": "^1.2.2",
     "pdf-creator-node": "^2.2.4",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.2.0"
+    "sequelize-cli": "^9.0.0"
   }
 }
