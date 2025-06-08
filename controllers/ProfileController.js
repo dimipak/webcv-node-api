@@ -33,23 +33,23 @@ class ProfileController {
             return;
         }
 
-        const ip = req.headers['x-forwarded-for'] ?? 'none'
-
-        if (ip !== 'none') {
-            const ipInfoToken = config.get('ip_info.token')
-
-            const request = await axios.get("https://ipinfo.io/" + ip + "?token=" + ipInfoToken) || 'error'
-
-            if (request !== 'error') {
-                const discord = config.get('discord')
-
-                await axios.post('https://discord.com/api/webhooks/' + discord.id + '/' + discord.token, {
-                    username: "Dimipak Website",
-                    avatar_url: "https://i.imgur.com/4M34hi2.png",
-                    content: "New visit from ip: " + request.data.ip + ", Country: " + request.data.country + ", Region: " + request.data.region + ", city: " + request.data.city
-                })
-            }
-        }
+        // const ip = req.headers['x-forwarded-for'] ?? 'none'
+        //
+        // if (ip !== 'none') {
+        //     const ipInfoToken = config.get('ip_info.token')
+        //
+        //     const request = await axios.get("https://ipinfo.io/" + ip + "?token=" + ipInfoToken) || 'error'
+        //
+        //     if (request !== 'error') {
+        //         const discord = config.get('discord')
+        //
+        //         await axios.post('https://discord.com/api/webhooks/' + discord.id + '/' + discord.token, {
+        //             username: "Dimipak Website",
+        //             avatar_url: "https://i.imgur.com/4M34hi2.png",
+        //             content: "New visit from ip: " + request.data.ip + ", Country: " + request.data.country + ", Region: " + request.data.region + ", city: " + request.data.city
+        //         })
+        //     }
+        // }
 
 
         // Success Response
