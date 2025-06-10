@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "export NODE_ENV=development && nodemon -L index.js",
+    "dev": "export NODE_ENV=development&& nodemon -L index.js",
     "migrate": "npx sequelize-cli db:migrate",
     "migrate:undo": "npx sequelize-cli db:migrate:undo:all",
     "migrate:refresh": "npm run migrate:undo && npm run migrate",
     "seed": "npx sequelize-cli db:seed:all",
     "migrate:refresh:seed": "npm run migrate:refresh && npm run seed",
-    "prod": "export NODE_ENV=production && node index.js",
+    "prod": "export NODE_ENV=production&& node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
